@@ -1,0 +1,5 @@
+{
+  "name": "Hospital Roster Manager",
+  "description": "A comprehensive hospital duty roster management system with real-time Firebase synchronization, doctor database, and print-ready reports.",
+  "requestFramePermissions": []
+}

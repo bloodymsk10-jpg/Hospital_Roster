@@ -1,0 +1,189 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+
+@theme {
+  --font-sans: "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-900;
+    font-family: 'Hind Siliguri', sans-serif;
+  }
+}
+
+@layer components {
+  .day-tab-btn {
+    @apply text-2xl px-5 py-3 m-2 border-2 rounded-xl min-w-[100px] transition-all duration-300 font-bold;
+  }
+  
+  .active-tab {
+    @apply !bg-[#004d40] !text-white !border-[#004d40];
+  }
+
+  .status-yes { @apply bg-[#10b981] text-white; }
+  .status-no { @apply bg-[#ef4444] text-white; }
+  .status-pending { @apply bg-gray-200 text-gray-700; }
+
+  .date-row {
+    @apply bg-[#f8fafc] border-2 border-[#004d40] px-8 py-2 rounded-full font-bold text-[#004d40] text-xl inline-flex items-center justify-center shadow-sm;
+  }
+
+  .editable-input {
+    @apply border border-transparent bg-transparent text-center w-full rounded transition-all p-1 hover:border-gray-300 hover:bg-white focus:border-[#0d7261] focus:bg-white focus:outline-none;
+  }
+
+  /* Column Widths */
+  .col-sl { width: 40px; }
+  .col-dept { width: 20%; }
+  .col-room { width: 5%; }
+  .col-time { width: 15%; }
+  .col-status { width: 10%; }
+  .col-unit { width: 10%; }
+}
+
+@media print {
+  @page {
+    size: portrait;
+    margin: 0.8cm !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+  html, body {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .print-area {
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    overflow: visible !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .overflow-x-auto {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid black !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    page-break-inside: avoid !important;
+  }
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+  thead, tbody, tfoot, tr, th, td {
+    margin: 0 !important;
+  }
+  thead {
+    display: table-header-group !important;
+    page-break-after: avoid !important;
+  }
+  th {
+    border: 1.5px solid black !important;
+    padding: var(--print-padding, 4px 4px) !important;
+    line-height: 1.0;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip;
+    vertical-align: middle;
+    color: black !important;
+    font-weight: bold !important;
+    background-color: #f3f4f6 !important;
+    -webkit-print-color-adjust: exact;
+    font-size: var(--print-font-size, 0.9rem) !important;
+  }
+  td {
+    border: 1.5px solid black !important;
+    padding: var(--print-padding, 4px 4px) !important;
+    line-height: 1.0;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip;
+    vertical-align: middle;
+    color: black !important;
+    font-size: var(--print-font-size, 0.9rem) !important;
+  }
+  input, select, textarea, .editable-input {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    appearance: none;
+    width: 100%;
+    text-align: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .text-lg { font-size: 1.1em !important; }
+  .text-sm { font-size: 0.85em !important; }
+  .text-\[10px\] { font-size: 0.65em !important; }
+  #displayHeadline {
+    font-size: var(--print-headline-size, 2.0rem) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    color: black !important;
+  }
+  .min-h-screen {
+    min-height: auto !important;
+  }
+  main {
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    max-width: 100% !important;
+  }
+  .max-w-7xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .max-w-6xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .date-row {
+    border: 1px solid black !important;
+    background-color: transparent !important;
+    font-size: 0.9rem !important;
+    padding: 1px 6px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+    display: inline-flex !important;
+    color: black !important;
+  }
+}
+
+/* Dynamic shrinking is now handled via CSS variables in RosterPage.tsx */
